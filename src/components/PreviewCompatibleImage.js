@@ -9,7 +9,7 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
 	const { alt = '', childImageSharp, image } = imageInfo;
 
 	if (!!image && !!image.childImageSharp) {
-		return <Img className="articleImage" fluid={image.childImageSharp.fluid} alt={alt} />;
+		return <Img style={{ borderRadius: '3px' }} fluid={image.childImageSharp.fluid} alt={alt} />;
 	}
 
 	if (!!childImageSharp) {

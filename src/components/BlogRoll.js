@@ -18,7 +18,7 @@ class BlogRoll extends React.Component {
 							<article className="media articleBlog">
 								<figure className="media-left">
 									{post.frontmatter.featuredimage ? (
-										<div className="featured-thumbnail">
+										<div className="articleImageBlog">
 											<PreviewCompatibleImage
 												imageInfo={{
 													image: post.frontmatter.featuredimage,

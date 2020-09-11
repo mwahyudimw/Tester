@@ -74,7 +74,6 @@ const Navbar = class extends React.Component {
 								</span>
 							</a>
 							<a
-                style={{ marginLeft: '100px' }}
 								className="navbar-item"
 								href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
 								rel="noopener noreferrer"

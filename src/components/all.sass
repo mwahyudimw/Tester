@@ -13,8 +13,8 @@ $black: #2b2523
 .articleBlog
   display: flex
 
-.articleImage
-  width: 100px
+.articleImageBlog
+  width: 100px  
   height: 100px
   border-radius: 5px  
 
@@ -138,10 +138,17 @@ $menu-label-color: $white-ter
 +tablet-only
   .blog-list-item .featured-thumbnail
     flex-basis: 50%;
+    .articleImageBlog
+    width: 300px
+    height: 200px
+
+  .articleBlog
+    display: block
+
 
 +mobile
-  .articleImage
-    width: 100%
+  .articleImageBlog
+    width: 300px
     height: 200px
 
   .articleBlog

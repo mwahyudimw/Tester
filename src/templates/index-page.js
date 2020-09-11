@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
+import BlogHeadingSingle from '../components/BlogHeadingSingle';
 import BlogHeading from '../components/BlogHeading';
 import BlogRoll from '../components/BlogRoll';
 
@@ -11,14 +12,18 @@ export const IndexPageTemplate = ({ image, title, heading, subheading, mainpitch
 		<section className="section section--gradient">
 			<div className="container">
 				<div className="section">
-					<div className="columns is-multiline">
-						<div className="column is-12"> 
+					<div className="columns is-multiline" style={{ borderBottom: '1px solid #ccc' }}>
+						<div className="column is-6">
+							<BlogHeadingSingle />
+						</div>
+						<div className="column is-6">
 							<BlogHeading />
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
+
 		<section className="section section--gradient">
 			<div className="container">
 				<div className="section">
@@ -27,30 +32,26 @@ export const IndexPageTemplate = ({ image, title, heading, subheading, mainpitch
 							<BlogRoll />
 						</div>
 						<div className="column is-4">
-							<div class="card">
-								<div class="card-content">
-									<div class="media">
-										<div class="media-left">
-											<figure class="image is-48x48">
-												<img
-													src="https://bulma.io/images/placeholders/96x96.png"
-													alt="Placeholder image"
-												/>
-											</figure>
-										</div>
-										<div class="media-content">
-											<p class="title is-4">John Smith</p>
-											<p class="subtitle is-6">@johnsmith</p>
-										</div>
-									</div>
-
-									<div class="content">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis
-										mauris. <a>@bulmaio</a>.
-										<a href="#">#css</a> <a href="#">#responsive</a>
-										<br />
-										<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-									</div>
+							<div
+								className="card"
+								style={{
+									position: '-webkit-sticky',
+									position: 'sticky',
+									top: '0',
+									paddingTop: '50px'
+								}}
+							>
+								<div className="card-content">
+									<iframe
+										src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpondokprogrammer%2F&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=821647688302529"
+										width="100%"
+										height="300"
+										style={{ border: 'none', overflow: 'auto' }}
+										scrolling="no"
+										frameborder="0"
+										allowTransparency="true"
+										allow="encrypted-media"
+									/>
 								</div>
 							</div>
 						</div>
@@ -61,17 +62,17 @@ export const IndexPageTemplate = ({ image, title, heading, subheading, mainpitch
 	</div>
 );
 
-IndexPageTemplate.propTypes = {
-	image: PropTypes.oneOfType([ PropTypes.object, PropTypes.string ]),
-	title: PropTypes.string,
-	heading: PropTypes.string,
-	subheading: PropTypes.string,
-	mainpitch: PropTypes.object,
-	description: PropTypes.string,
-	intro: PropTypes.shape({
-		blurbs: PropTypes.array
-	})
-};
+// IndexPageTemplate.propTypes = {
+// 	image: PropTypes.oneOfType([ PropTypes.object, PropTypes.string ]),
+// 	title: PropTypes.string,
+// 	heading: PropTypes.string,
+// 	subheading: PropTypes.string,
+// 	mainpitch: PropTypes.object,
+// 	description: PropTypes.string,
+// 	intro: PropTypes.shape({
+// 		blurbs: PropTypes.array
+// 	})
+// };
 
 const IndexPage = ({ data }) => {
 	const { frontmatter } = data.markdownRemark;
