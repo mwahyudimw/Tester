@@ -92,7 +92,7 @@ export default () => (
 					sort: { order: DESC, fields: [frontmatter___date] }
 					filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
 					limit: 1
-					skip: 6
+					skip: 2
 				) {
 					edges {
 						node {
