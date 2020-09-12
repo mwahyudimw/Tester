@@ -4,7 +4,7 @@ title: Belajar Java Script Buat Pemula
 date: 2020-09-11T23:10:08.251Z
 description: Saat ini bahasa pemrograman terfavorit salah satu nya adalah java script
 featuredpost: true
-featuredimage: /img/kuning-percikan-anak-anak-anak-anak-logo.png
+featuredimage: /img/jumbotron.jpg
 tags:
   - hantu
   - lontong
