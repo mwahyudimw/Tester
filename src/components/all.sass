@@ -10,6 +10,10 @@ $primary-invert: $kaldi-red-invert
 $body-color: #333
 $black: #2b2523
 
+
+input:focus
+   border-radius: 5px 
+
 .articleBlog
   display: flex
 
@@ -136,8 +140,9 @@ $menu-label-color: $white-ter
 
 // responsiveness
 +tablet-only
-  .blog-list-item .featured-thumbnail
+  .blog-list-item .articleImageBlog
     flex-basis: 50%;
+
     .articleImageBlog
     width: 300px
     height: 200px
@@ -146,17 +151,12 @@ $menu-label-color: $white-ter
     display: block
 
 
-+mobile
-  .articleImageBlog
-    width: 300px
-    height: 200px
-
++mobile 
   .articleBlog
-    display: block
+    display: inline-block
 
   .blog-list-item header
     display: block
-  .blog-list-item .featured-thumbnail
-    text-align: center;
-    max-width: 70%;
-    margin: 0 0 1em;
+
+  .blog-list-item .articleImageBlog
+    flex-basis: 50%

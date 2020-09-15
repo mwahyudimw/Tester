@@ -5,6 +5,8 @@ import search from '../img/search.svg';
 import bookmark from '../img/bookmark.svg';
 import logo from '../img/logo.svg';
 
+import SearchBlog from '../components/SearchBlog';
+
 const Navbar = class extends React.Component {
 	constructor(props) {
 		super(props);
@@ -55,33 +57,18 @@ const Navbar = class extends React.Component {
 					</div>
 					<div id="navMenu" className={`navbar-menu ${this.state.navBarActiveClass}`}>
 						<div className="navbar-end has-text-centered">
-							<a
-								className="navbar-item"
-								href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-								rel="noopener noreferrer"
-							>
-								<span className="icon">
-									<img src={search} alt="search" />
-								</span>
-							</a>
-							<a
-								className="navbar-item"
-								href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-								rel="noopener noreferrer"
-							>
-								<span className="icon">
-									<img src={bookmark} alt="bookmark" />
-								</span>
-							</a>
-							<a
-								className="navbar-item"
-								href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-								rel="noopener noreferrer"
-							>
-								<span className="icon">
-									<img src={user} alt="user" />
-								</span>
-							</a>
+							<div className="navbar-item">
+								<SearchBlog />
+							</div>
+
+							<span className="icon">
+								<div className="dropdown">
+									<img width="100" src={user} alt="user" />
+									<div className="dropdown-content">
+										<Link to="/admin" style={{ color: 'gray' }}>Dashboard</Link>
+									</div>
+								</div>
+							</span>
 						</div>
 					</div>
 				</div>

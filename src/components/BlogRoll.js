@@ -9,6 +9,7 @@ class BlogRoll extends React.Component {
 	render() {
 		const { data } = this.props;
 		const { edges: posts } = data.allMarkdownRemark;
+		const str = 'Mozilla';
 
 		return (
 			<div className="colums">
@@ -16,21 +17,24 @@ class BlogRoll extends React.Component {
 					posts.map(({ node: post }) => (
 						<div className="column" key={post.id}>
 							<article className="media articleBlog">
-								<figure className="media-left">
-									{post.frontmatter.featuredimage ? (
-										<div className="articleImageBlog">
-											<PreviewCompatibleImage
-												imageInfo={{
-													image: post.frontmatter.featuredimage,
-													alt: `featured image thumbnail for post ${post.frontmatter.title}`
-												}}
-											/>
-										</div>
-									) : null}
-								</figure>
+								<Link to={post.fields.slug}>
+									<figure className="media-left">
+										{post.frontmatter.featuredimage ? (
+											<div className="articleImageBlog">
+												<PreviewCompatibleImage
+													imageInfo={{
+														image: post.frontmatter.featuredimage,
+														alt: `featured image thumbnail for post ${post.frontmatter
+															.title}`
+													}}
+												/>
+											</div>
+										) : null}
+									</figure>
+								</Link>
 								<div className="media-content">
 									<div className="content">
-										<p>
+										<p className="articleTextContent">
 											<Link className="title has-text-dark is-size-5" to={post.fields.slug}>
 												{post.frontmatter.title}
 											</Link>

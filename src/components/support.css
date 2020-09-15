@@ -1,0 +1,45 @@
+/* search */
+
+.inputSearch {
+    width: 5%;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background-image: url('https://img.icons8.com/fluent-systems-regular/24/000000/search.png');
+    padding-left: 30px;
+    background-position: 2.5px 2.5px;
+    background-repeat: no-repeat;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.inputSearch:focus {
+    width: 100%;
+    outline: none;
+    border-bottom: 1px solid gray;
+    border-radius: 0;
+}
+
+
+/* user */
+
+.dropdown {
+    position: relative;
+    top: 16px;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

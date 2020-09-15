@@ -14,20 +14,23 @@ class BlogHeading extends React.Component {
 			<div className="colums">
 				{posts &&
 					posts.map(({ node: post }) => (
-						<div className="column is-12" key={post.id}>
+						<div className="column is-12" style={{ overflow: 'hidden', borderRadius: '5px' }} key={post.id}>
 							<article className="media articleBlog">
-								<figure className="media-left">
-									{post.frontmatter.featuredimage ? (
-										<div className="articleImageBlog">
-											<PreviewCompatibleImage
-												imageInfo={{
-													image: post.frontmatter.featuredimage,
-													alt: `featured image thumbnail for post ${post.frontmatter.title}`
-												}}
-											/>
-										</div>
-									) : null}
-								</figure>
+								<Link to={post.fields.slug}>
+									<figure className="media-left">
+										{post.frontmatter.featuredimage ? (
+											<div className="articleImageBlog">
+												<PreviewCompatibleImage
+													imageInfo={{
+														image: post.frontmatter.featuredimage,
+														alt: `featured image thumbnail for post ${post.frontmatter
+															.title}`
+													}}
+												/>
+											</div>
+										) : null}
+									</figure>
+								</Link>
 								<div className="media-content">
 									<div className="content">
 										<p>
@@ -82,7 +85,7 @@ export default () => (
 					sort: { order: DESC, fields: [frontmatter___date] }
 					filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
 					limit: 3
-					skip: 2
+					skip: 1
 				) {
 					edges {
 						node {
