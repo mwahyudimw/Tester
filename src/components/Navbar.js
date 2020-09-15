@@ -58,17 +58,17 @@ const Navbar = class extends React.Component {
 					<div id="navMenu" className={`navbar-menu ${this.state.navBarActiveClass}`}>
 						<div className="navbar-end has-text-centered">
 							<div className="navbar-item">
-								<SearchBlog />
+								<SearchBlog />	
 							</div>
-
-							<span className="icon">
-								<div className="dropdown">
-									<img width="100" src={user} alt="user" />
-									<div className="dropdown-content">
-										<Link to="/admin" style={{ color: 'gray' }}>Dashboard</Link>
-									</div>
-								</div>
-							</span>
+							<a
+								className="navbar-item"
+								href="https://blog-testing.netlify.app"
+								rel="noopener noreferrer"
+							>
+								<span className="icon">
+									<img src={user} alt="user" />
+								</span>
+							</a>
 						</div>
 					</div>
 				</div>
