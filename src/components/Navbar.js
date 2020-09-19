@@ -1,11 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import user from '../img/user.svg';
-import search from '../img/search.svg';
-import bookmark from '../img/bookmark.svg';
 import logo from '../img/logo.svg';
+import SearchBar from './search/SearchBar';
 
-import SearchBlog from '../components/SearchBlog';
 
 const Navbar = class extends React.Component {
 	constructor(props) {
@@ -58,7 +56,7 @@ const Navbar = class extends React.Component {
 					<div id="navMenu" className={`navbar-menu ${this.state.navBarActiveClass}`}>
 						<div className="navbar-end has-text-centered">
 							<div className="navbar-item">
-								<SearchBlog />	
+								<SearchBar/>
 							</div>
 							<a
 								className="navbar-item"
