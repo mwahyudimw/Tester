@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
 
-import "../components/all.sass";
 
 class BlogHeadingSingle extends React.Component {
   render() {

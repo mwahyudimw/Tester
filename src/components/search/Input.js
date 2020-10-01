@@ -1,5 +1,4 @@
 import React from "react";
-import "../support.css";
 
 const Input = React.forwardRef(({ label, onChange, value }, ref) => (
   <input
