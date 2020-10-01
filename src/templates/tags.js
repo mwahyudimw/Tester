@@ -1,17 +1,69 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { Link, graphql } from "gatsby";
+import { GoCalendar } from "react-icons/go";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import Layout from "../components/Layout";
 
 class TagRoute extends React.Component {
   render() {
     const posts = this.props.data.allMarkdownRemark.edges;
     const postLinks = posts.map((post) => (
-      <li key={post.node.fields.slug}>
-        <Link to={post.node.fields.slug}>
-          <h2 className="is-size-2">{post.node.frontmatter.title}</h2>
-        </Link>
-      </li>
+      <div className="column" key={post.node.id}>
+        <article className="media articleBlog">
+          <Link to={post.node.fields.slug}>
+            <figure className="media-left">
+              {post.node.frontmatter.featuredimage ? (
+                <div className="articleImageBlog">
+                  <PreviewCompatibleImage
+                    imageInfo={{
+                      image: post.node.frontmatter.featuredimage,
+                      alt: `featured image thumbnail for post node.${post.node.frontmatter.title}`,
+                    }}
+                  />
+                </div>
+              ) : null}
+            </figure>
+          </Link>
+          <div className="media-content">
+            <div className="content">
+              <p className="articleTextContent">
+                <Link
+                  className="title has-text-dark is-size-5"
+                  to={post.node.fields.slug}
+                >
+                  {post.node.frontmatter.title}
+                </Link>
+                <p>{post.node.frontmatter.description}</p>
+                <div style={{ display: "flex" }}>
+                  <GoCalendar size={20} />
+
+                  <p style={{ marginLeft: 10 }}>{post.node.frontmatter.date}</p>
+                </div>
+              </p>
+            </div>
+            <nav className="level is-mobile">
+              <div className="level-left">
+                <a className="level-item">
+                  <span className="icon is-small">
+                    <i className="fas fa-reply" />
+                  </span>
+                </a>
+                <a className="level-item">
+                  <span className="icon is-small">
+                    <i className="fas fa-retweet" />
+                  </span>
+                </a>
+                <a className="level-item">
+                  <span className="icon is-small">
+                    <i className="fas fa-heart" />
+                  </span>
+                </a>
+              </div>
+            </nav>
+          </div>
+        </article>
+      </div>
     ));
     const tag = this.props.pageContext.tag;
     const title = this.props.data.site.siteMetadata.title;
@@ -35,7 +87,12 @@ class TagRoute extends React.Component {
                 </h3>
                 <ul className="taglist">{postLinks}</ul>
                 <p className="has-text-centered">
-                  <Link style={{ color: "#000", textDecoration: "underline" }} to="/tags/">Browse all tags</Link>
+                  <Link
+                    style={{ color: "#000", textDecoration: "underline" }}
+                    to="/tags/"
+                  >
+                    Browse all tags
+                  </Link>
                 </p>
               </div>
             </div>
@@ -68,6 +125,15 @@ export const tagPageQuery = graphql`
           }
           frontmatter {
             title
+            description
+            date(formatString: "MMMM DD, YYYY")
+            featuredimage {
+              childImageSharp {
+                fluid(maxWidth: 120, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

@@ -95,21 +95,14 @@
     top: 50%;
     right: 10px;
     margin-top: -9px;
-    background: url("https://cssdeck.com/uploads/media/items/7/7BNkBjd.png") 0 0 no-repeat;
 }
 
 .results a:hover {
     text-decoration: none;
     color: #fff;
     text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
-    border-color: #2380dd #2179d5 #1a60aa;
-    background-color: #338cdf;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #59aaf4), color-stop(100%, #338cdf));
-    background-image: -webkit-linear-gradient(top, #59aaf4, #338cdf);
-    background-image: -moz-linear-gradient(top, #59aaf4, #338cdf);
-    background-image: -ms-linear-gradient(top, #59aaf4, #338cdf);
-    background-image: -o-linear-gradient(top, #59aaf4, #338cdf);
-    background-image: linear-gradient(top, #59aaf4, #338cdf);
+    border-color: #000 ;
+    background-color: #000000;
     -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.08);
     -moz-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.08);
     -ms-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.08);
