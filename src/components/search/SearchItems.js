@@ -1,6 +1,5 @@
 import React from "react";
 import SearchItem from "./SearchItem";
-import "../support.css";
 
 const SearchItems = ({ results, query }) => (
   <ul className="results" >
