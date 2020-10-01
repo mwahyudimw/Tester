@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
+import { GoCalendar } from "react-icons/go";
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
-
 
 class BlogHeadingSingle extends React.Component {
   render() {
     const { data } = this.props;
-	const { edges: posts } = data.allMarkdownRemark;
+    const { edges: posts } = data.allMarkdownRemark;
 
     return (
       <div className="colums">
@@ -41,7 +41,13 @@ class BlogHeadingSingle extends React.Component {
                             {post.frontmatter.title}
                           </Link>
                           <p>{post.frontmatter.description}</p>
-                          <p>{post.frontmatter.date}</p>
+                          <div style={{ display: "flex" }}>
+                            <GoCalendar size={20} />
+
+                            <p style={{ marginLeft: 10 }}>
+                              {post.frontmatter.date}
+                            </p>
+                          </div>
                         </p>
                       </div>
                       <nav className="level is-mobile">
