@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
 import { GoCalendar } from "react-icons/go";
-import PreviewCompatibleImage from "./PreviewCompatibleImage";
+import PreviewCompatibleImage from "../PreviewCompatibleImage";
 
 class BlogHeading extends React.Component {
   render() {
@@ -43,10 +43,12 @@ class BlogHeading extends React.Component {
                         {post.frontmatter.title}
                       </Link>
                       <p>{post.frontmatter.description}</p>
-                      <div style={{display: "flex"}} >
+                      <div style={{ display: "flex" }}>
                         <GoCalendar size={20} />
 
-                        <p style={{marginLeft: 10}} >{post.frontmatter.date}</p>
+                        <p style={{ marginLeft: 10 }}>
+                          {post.frontmatter.date}
+                        </p>
                       </div>
                     </p>
                   </div>
