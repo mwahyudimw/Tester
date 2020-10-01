@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import Navbar from '../components/Navbar';
 import useSiteMetadata from './SiteMetadata';
 import { withPrefix } from 'gatsby';
+import Footer from './Footer';
 import '../styles/sass/all.sass';
 import "../styles/css/index.css";
 
@@ -29,6 +30,7 @@ const TemplateWrapper = ({ children }) => {
 			</Helmet>
 			<Navbar />
 			<div>{children}</div>
+			<Footer/>
 		</div>
 	);
 };
